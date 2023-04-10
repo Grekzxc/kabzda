@@ -7,6 +7,7 @@ import { OnOff1 } from './components/OnOff/OnOff';
 import UncontrollerAccordion from './components/accordion/UncontrolledAccordion';
 import UncontrolledRating from './components/Rating/UncontrolledRating';
 import { OnOff2 } from './components/OnOff/UncontrolledOnOff';
+import { ControlledCheckBox, ControlledInput, ControlledSelect, GetControlledInput, TrackUncontrolledInput } from './input/input';
 
 function App() {
 
@@ -24,7 +25,9 @@ function App() {
       <UncontrolledRating />
       <UncontrollerAccordion titleValue={'Menu'} />
       <Accordion titleValue={'Menu'} collapsed={accordionCollapsed} onChange={() => { setAccordionCollapsed(!accordionCollapsed) }} />
-
+      <ControlledInput />
+      <ControlledCheckBox />
+      <ControlledSelect />
     </div>
   );
 }
