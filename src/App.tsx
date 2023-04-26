@@ -15,6 +15,11 @@ function App() {
   const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
   let [switchOn, setSwitchOn] = useState<boolean>(false)
 
+  const onClickCallback = (value: any) => {
+    return console.log(value);
+
+  }
+
   return (
     <div>
       <PageTitle title={'This is APP component '} />
@@ -24,7 +29,12 @@ function App() {
       <Rating value={ratingValue} onClick={setRatingValue} />
       <UncontrolledRating />
       <UncontrollerAccordion titleValue={'Menu'} />
-      <Accordion titleValue={'Menu'} collapsed={accordionCollapsed} onChange={() => { setAccordionCollapsed(!accordionCollapsed) }} />
+      <Accordion
+        titleValue={'Menu'}
+        collapsed={accordionCollapsed}
+        onChange={() => { setAccordionCollapsed(!accordionCollapsed) }}
+        items={[{ title: 'alex', value: 1 }, { title: 'dimych', value: 2 }, { title: 'andrey', value: 3 }]}
+        onClick={onClickCallback} />
       <ControlledInput />
       <ControlledCheckBox />
       <ControlledSelect />
