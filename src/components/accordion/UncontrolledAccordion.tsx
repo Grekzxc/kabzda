@@ -1,20 +1,22 @@
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
+import { Reduser } from "./reduser";
 
 type AccordionPropsType = {
     titleValue: string
 }
 
+
 function UncontrollerAccordion(props: AccordionPropsType) {
-    const [collapsed, setCollapsed] = useState(Boolean)
+
+    const [state, dispatch] = useReducer(Reduser, { collapsed: false })
 
     return <div>
         <AccordionTitle
             title={props.titleValue}
-            onClick={() => { setCollapsed(!collapsed) }} />
-        {!collapsed && <AccordionBody />}
+            onClick={() => { dispatch({ type: 'TOGGLE_COLLAPSED' }) }} />
+        {!state.collapsed && <AccordionBody />}
     </div>
 }
-
 
 type AccordionTitlePropsType = {
     title: string
