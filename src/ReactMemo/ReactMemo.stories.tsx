@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 
 export default {
     title: 'React.memo demo',
@@ -28,3 +28,4 @@ export const Example = () => {
         <Users users={users} />
     </>
 }
+
