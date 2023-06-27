@@ -6,7 +6,6 @@ export default {
 
 function generateData() {
     console.log('generateData');
-
     return 1
 }
 
@@ -15,10 +14,8 @@ export const Example1 = () => {
 
     const [count, setCount] = useState(generateData)
 
-    const changer = (state: number) => state + 1
-
     return <>
-        <button onClick={() => setCount(changer)}>+</button>
+        <button onClick={() => setCount(state => state + 1)}>+</button>
         {count}
     </>
 }
