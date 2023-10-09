@@ -44,11 +44,10 @@ export const SetTimeoutExample = () => {
     const [fake, setFake] = useState(1)
 
     useEffect(() => {
-        console.log('SetTimeoutExample');
+
 
         setInterval(() => {
-            console.log('tick' + count);
-
+            console.log('tick');
             setCount((state) => state + 1)
         }, 1000)
     }, [])
